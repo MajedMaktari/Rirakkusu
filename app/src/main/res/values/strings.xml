@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Rirakkusu</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="feeling">feeling</string>
+    <string name="time">Time</string>
+
+    <string name="default_time">5</string>
+</resources>
