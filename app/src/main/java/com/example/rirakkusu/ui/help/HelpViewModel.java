@@ -1,16 +1,16 @@
-package com.example.rirakkusu.ui.dashboard;
+package com.example.rirakkusu.ui.help;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class HelpViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public HelpViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is where previous activities will be posted");
+        mText.setValue("This is the Help Page");
     }
 
     public LiveData<String> getText() {

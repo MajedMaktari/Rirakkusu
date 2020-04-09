@@ -1,9 +1,10 @@
-package com.example.rirakkusu.ui.notifications;
+package com.example.rirakkusu.ui.help;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -14,20 +15,24 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.rirakkusu.R;
 
-public class NotificationsFragment extends Fragment {
+public class HelpFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private HelpViewModel helpViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        helpViewModel =
+                ViewModelProviders.of(this).get(HelpViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_help, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+        helpViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
+
+
+
             }
         });
         return root;

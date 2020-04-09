@@ -17,13 +17,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.rirakkusu.ui.dashboard.DashboardFragment"
+        android:name="com.example.rirakkusu.ui.history.HistoryFragment"
         android:label="History"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_history" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.rirakkusu.ui.notifications.NotificationsFragment"
+        android:name="com.example.rirakkusu.ui.help.HelpFragment"
         android:label="Help"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_help" />
 </navigation>

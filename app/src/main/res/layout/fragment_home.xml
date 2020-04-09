@@ -19,93 +19,137 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioGroup
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_home">
 
         <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/feeling1"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
 
-            android:layout_weight="1"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
             android:clickable="true"
-            android:text="CheckBox" />
-
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:text="CheckBox" />
+            android:focusable="true"
+            android:text="@string/happy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/feeling6"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
-            android:text="CheckBox" />
+            android:focusable="true"
+            android:text="@string/sad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/feeling5"
+            app:layout_constraintTop_toBottomOf="@+id/feeling3" />
 
         <CheckBox
-            android:id="@+id/checkBox5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/feeling3"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
             android:clickable="true"
-            android:text="CheckBox" />
+            android:focusable="true"
+            android:text="@string/angery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/feeling2"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/checkBox6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/feeling2"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
             android:clickable="true"
-            android:text="CheckBox" />
+            android:focusable="true"
+            android:text="@string/surprised"
+            app:layout_constraintStart_toEndOf="@+id/feeling1"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/checkBox7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/feeling9"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:checked="false"
             android:clickable="true"
-            android:text="CheckBox" />
+            android:focusable="true"
+            android:text="@string/anxious"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/feeling8"
+            app:layout_constraintTop_toBottomOf="@+id/feeling6" />
 
         <CheckBox
-            android:id="@+id/checkBox8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/feeling7"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
-            android:text="CheckBox" />
+            android:focusable="true"
+            android:text="@string/loved"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feeling4" />
 
         <CheckBox
-            android:id="@+id/checkBox9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/feeling8"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
-            android:text="CheckBox" />
+            android:focusable="true"
+            android:text="@string/amazed"
+            app:layout_constraintStart_toEndOf="@+id/feeling7"
+            app:layout_constraintTop_toBottomOf="@+id/feeling5" />
 
         <CheckBox
-            android:id="@+id/checkBox10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/feeling5"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
-            android:text="CheckBox" />
-    </RadioGroup>
+            android:focusable="true"
+            android:text="@string/bored"
+            app:layout_constraintStart_toEndOf="@+id/feeling4"
+            app:layout_constraintTop_toBottomOf="@+id/feeling2" />
+
+        <CheckBox
+            android:id="@+id/feeling4"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/intrested"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feeling1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/percentlayout"
@@ -140,6 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
+                android:inputType="none"
                 android:text="@string/default_time" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -151,7 +196,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_weight=".75"
+            android:layout_weight="1.5"
             android:max="30"
             android:progress="5" />
 
@@ -162,7 +207,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
-        android:text="Start"
+        android:layout_marginTop="16dp"
+        android:text="@string/start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/percentlayout" />
