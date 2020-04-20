@@ -3,7 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="welcome_back">Welcome Back!</string>
+    <string name="welcome">Welcome!</string>
     <string name="feeling">feeling</string>
     <string name="time">Time</string>
 
@@ -23,5 +23,14 @@
 
     <string name="title_activity_meditation">MeditationActivity</string>
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_content">"Sit comfortably or lay down \n Keep your back straight \n Relax your muscles \n  De-focus your eyes, Breath In \n Breath Out while closing your eyes. "</string>
+    <string name="end_sesion">End Sesion</string>
+    <string name="preferences">Preferences</string>
+    <string name="user_name_key">user_name</string>
+    <string name="user_name_title">User Name</string>
+    <string name="user_name_summary">Enter your name for improved user experience.</string>
+    <string name="save_data_key">save_data</string>
+    <string name="save_data_summary">This will save your emotions, helping you keep track of your daily emotional state.</string>
+    <string name="Save_data_title">Save Emotions</string>
+    <string name="about_text">Life is full of stress and anxiety. This app will help you manage anxiety, stress, and depression. \nMeditation helps with falling asleep and sharpens your memory.  \n \n \nFor more details on how to meditate properly, read this article published by mindful.org. \n https://www.mindful.org/how-to-meditate/</string>
 </resources>

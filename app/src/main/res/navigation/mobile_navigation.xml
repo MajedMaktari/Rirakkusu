@@ -9,20 +9,16 @@
         android:id="@+id/navigation_home"
         android:name="com.example.rirakkusu.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.rirakkusu.ui.history.HistoryFragment"
+        android:id="@+id/navigation_preferences"
+        android:name="com.example.rirakkusu.ui.preferences.PreferencesFragment"
         android:label="History"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_preferences" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_help"
         android:name="com.example.rirakkusu.ui.help.HelpFragment"
         android:label="Help"
         tools:layout="@layout/fragment_help" />
