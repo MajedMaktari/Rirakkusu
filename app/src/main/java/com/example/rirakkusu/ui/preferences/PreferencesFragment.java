@@ -17,7 +17,6 @@ import com.example.rirakkusu.R;
 
 public class PreferencesFragment extends PreferenceFragmentCompat {
 
-    //private PreferencesViewModel dashboardViewModel;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -25,19 +24,4 @@ public class PreferencesFragment extends PreferenceFragmentCompat {
 
 
     }
-
-   /* public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(PreferencesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_preferences, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
-    }*/
 }

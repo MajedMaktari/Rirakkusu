@@ -1,34 +1,25 @@
 package com.example.rirakkusu.ui.home;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
-import com.example.rirakkusu.MainActivity;
 import com.example.rirakkusu.R;
-
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
+import com.example.rirakkusu.ui.help.HelpActivity;
+import com.example.rirakkusu.ui.session.SessionActivity;
+import com.example.rirakkusu.ui.session.SessionFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -36,7 +27,7 @@ public class HomeFragment extends Fragment {
     private EditText homeTitleEditText;
     private EditText timeEditText;
 
-    private int sessionTime;
+    private int sessionTime = 5;
     private SharedPreferences savedValues;
     private String userName;
 
@@ -47,6 +38,8 @@ public class HomeFragment extends Fragment {
         PreferenceManager.setDefaultValues(getActivity(), R.xml.root_preferemces, false);
         savedValues = PreferenceManager.getDefaultSharedPreferences(getActivity());
         userName = savedValues.getString(getResources().getString(R.string.user_name_key), "!");
+
+
 
     }
 
@@ -66,6 +59,9 @@ public class HomeFragment extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 timeEditText.setText(String.format("%d", progress));
                 setSessionTime(progress);
+                Log.e ("session Time", String.valueOf(getSessionTime()));
+                sessionTime = progress;
+                Log.e ("session Time", String.valueOf(sessionTime));
             }
 
             @Override
@@ -77,28 +73,28 @@ public class HomeFragment extends Fragment {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 int progress = seekBar.getProgress();
                 timeEditText.setText(String.format("%d", progress));
-                setSessionTime(progress);
+                //setSessionTime(progress);
 
 
             }
         });
 
-
-        //event listener for start button
         Button startSession = root.findViewById(R.id.startBtn);
         startSession.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StartMeditation();
+                Intent intent =SessionActivity.newIntent(getActivity(), sessionTime);
+                startActivity(intent);
             }
         });
+
 
 
         return root;
     }
 
     public void StartMeditation() {
-        Intent intent = new Intent(getActivity(), SessionActivity.class);
+        Intent intent = new Intent(getActivity(), SessionFragment.class);
         startActivity(intent);
     }
 

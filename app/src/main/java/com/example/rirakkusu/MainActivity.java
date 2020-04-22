@@ -1,54 +1,101 @@
 package com.example.rirakkusu;
 
-import android.app.Activity;
-import android.media.MediaPlayer;
-import android.os.AsyncTask;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Handler;
-import android.util.Log;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.SeekBar;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
+import com.example.rirakkusu.ui.help.HelpActivity;
 import com.example.rirakkusu.ui.home.HomeFragment;
+import com.example.rirakkusu.ui.preferences.SettingsActivity;
+import com.example.rirakkusu.ui.session.SessionActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.preference.PreferenceManager;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
+import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+import static android.app.AlarmManager.*;
 
-    private SeekBar timeSeek;
-    private EditText timeEditText;
-    private float sessionTime = 5 ;
+public class MainActivity extends SingleFragmentActivity {
+
+
+    private SharedPreferences savedValues;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected Fragment createFragment() {
+        return new HomeFragment();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_preferences, R.id.navigation_help)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+
+        PreferenceManager.setDefaultValues(this, R.xml.root_preferemces, false);
+        savedValues = PreferenceManager.getDefaultSharedPreferences(this);
+
+        //Reminder
+        if (savedValues.getBoolean(getResources().getString(R.string.reminder_preference), true)){
+            //alarmService
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.HOUR, 24);
+            //calendar.add(Calendar.SECOND, 10); // use this for testing
 
 
+            Intent intent = new Intent("rirakkusu.action.DISPLAY_NOTIFICATION");
+            PendingIntent broadcast = PendingIntent.getBroadcast(this, 72, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            alarmManager.setExact(RTC_WAKEUP, calendar.getTimeInMillis(), broadcast);
+        }
+
+    }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.navigation_home) {
+            return true;
+        }
+
+        switch(item.getItemId()) {
+            case R.id.navigation_home:
+                startActivity(new Intent(getApplicationContext(),HomeFragment.class));
+                return true;
+            case R.id.navigation_preferences:
+                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                return true;
+            case R.id.navigation_help:
+                startActivity(new Intent(getApplicationContext(), HelpActivity.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

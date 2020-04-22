@@ -33,4 +33,5 @@
     <string name="save_data_summary">This will save your emotions, helping you keep track of your daily emotional state.</string>
     <string name="Save_data_title">Save Emotions</string>
     <string name="about_text">Life is full of stress and anxiety. This app will help you manage anxiety, stress, and depression. \nMeditation helps with falling asleep and sharpens your memory.  \n \n \nFor more details on how to meditate properly, read this article published by mindful.org. \n https://www.mindful.org/how-to-meditate/</string>
+    <string name="reminder_preference">reminder_preference</string>
 </resources>

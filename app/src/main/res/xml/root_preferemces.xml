@@ -14,4 +14,10 @@
         android:key="save_data"
         android:summary="@string/save_data_summary"
         android:title="@string/Save_data_title" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/reminder_preference"
+        android:summary="This enable daily reminder"
+        android:title="Reminder" />
+
 </PreferenceScreen>

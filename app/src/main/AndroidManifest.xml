@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.home.SessionActivity"></activity>
+        <activity android:name=".ui.session.SessionFragment"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -22,6 +22,19 @@
         <activity
             android:name=".ui.preferences.SettingsActivity"
             android:parentActivityName=".MainActivity"></activity>
+            <activity android:name=".ui.help.HelpActivity"
+                android:parentActivityName=".MainActivity"></activity>
+
+        <activity android:name=".ui.session.SessionActivity"
+            android:parentActivityName=".MainActivity"></activity>
+
+            <service    android:name=".ui.SoundService"/>
+
+        <receiver android:name=".ui.ReminderNotification">
+            <intent-filter>
+                <action android:name="rirakkusu.action.DISPLAY_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
