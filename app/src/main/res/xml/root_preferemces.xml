@@ -3,7 +3,6 @@
 
     <EditTextPreference
         android:layout_width="match_parent"
-        android:defaultValue="false"
         android:key="@string/user_name_key"
         android:selectAllOnFocus="true"
         android:singleLine="true"
@@ -11,9 +10,14 @@
         android:title="@string/user_name_title" />
     <SwitchPreference
         android:defaultValue="true"
-        android:key="save_data"
+        android:key="@string/save_data"
         android:summary="@string/save_data_summary"
         android:title="@string/Save_data_title" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/display_history"
+        android:summary="@string/display_history_summary"
+        android:title="@string/display_history_title" />
     <SwitchPreference
         android:defaultValue="true"
         android:key="@string/reminder_preference"

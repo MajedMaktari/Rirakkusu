@@ -30,8 +30,13 @@
     <string name="user_name_title">User Name</string>
     <string name="user_name_summary">Enter your name for improved user experience.</string>
     <string name="save_data_key">save_data</string>
-    <string name="save_data_summary">This will save your emotions, helping you keep track of your daily emotional state.</string>
-    <string name="Save_data_title">Save Emotions</string>
+    <string name="save_data_summary">This will save your emotions and date helping you keep track of your daily emotional state. Display History should be enabled to view them.</string>
+    <string name="Save_data_title">Save History</string>
     <string name="about_text">Life is full of stress and anxiety. This app will help you manage anxiety, stress, and depression. \nMeditation helps with falling asleep and sharpens your memory.  \n \n \nFor more details on how to meditate properly, read this article published by mindful.org. \n https://www.mindful.org/how-to-meditate/</string>
     <string name="reminder_preference">reminder_preference</string>
+    <string name="save_data">save_data</string>
+    <string name="display_history">display_history</string>
+    <string name="display_history_title">Display History</string>
+    <string name="display_history_summary">"Enable this to display your history on the Help Page "</string>
+    <string name="diplay_histor_summary">Enable this to view previous session history. This will be diplayed in the History Page</string>
 </resources>
